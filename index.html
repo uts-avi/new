@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peter Dimitrov Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F3E3;
+            color: #000;
+            transition: background-color 0.5s ease;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-size: 12vw;
+            font-weight: 700;
+            margin: 0;
+            line-height: 0.9;
+            letter-spacing: -0.02em;
+        }
+
+        .time, .year {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .bio {
+            font-size: 14px;
+            max-width: 285px;
+            position: absolute;
+            top: 52px;
+            right: 40px;
+            text-align: right;
+        }
+
+        .projects {
+            margin-top: 13vh;
+            position: relative;
+        }
+
+        .project {
+            display: inline-flex;
+            align-items: center;
+            font-size: 32px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #000;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-number {
+            font-size: 14px;
+            margin-right: 8px;
+        }
+
+        .arrow {
+            margin-left: 8px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project:hover .arrow {
+            opacity: 1;
+        }
+
+        .contact {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 2;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 6px 10px;
+            margin-left: 5px;
+            border: 1px solid #000;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background-color: transparent;
+        }
+
+        .highlight {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* New styles for email button */
+        #emailButton {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            min-width: 70px; /* Prevent size change when text changes */
+        }
+
+        #emailButton.copied {
+            background-color: #000;
+            color: #fff;
+            border-color: #000;
+        }
+
+        .project-image {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-5deg);
+            width: 400px;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 0;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        body.project-hovered .container > *:not(.projects) {
+            opacity: 0.85;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-hovered .project:not(:hover) {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>UTSAVI PARMAR</h1>
+        </header>
+        <main>
+            <div class="time">LOCAL TIME 8:39 PM</div>
+            <div class="year">©2024</div>
+            <div class="bio">
+                Hi! I’m Utsavi - a second-year Communication Design student passionate about typography and creating meaningful designs. I strive for elegance and precision in my work, staying true to the core idea while connecting deeply with clients to deliver results they’ll love. When I’m not designing, I’m building my social media presence to share my work, connect with others, and explore exciting opportunities like internships and freelance projects.
+            </div>
+            <div class="projects">
+                <a href="cards.html" class="project" data-project="ACES" data-image="images/main-cards.jpg">
+                    <span class="project-number">RP / 01</span>
+                    ACES/
+                    <div class="arrow">↗</div>
+                </a>
+                <a href="lemon-soda.html" class="project" data-project="FIZZ" data-image="images/main-lemon-soda.jpg">
+                    <span class="project-number">RP / 02</span>
+                    FIZZ/
+                    <div class="arrow">↗</div>
+                </a>
+                <a href="savage-vinyl.html" class="project" data-project="SAVAGE VINYL" data-image="images/main-savage-vinyl.jpg">
+                    <span class="project-number">RP / 03</span>
+                    SAVAGE VINYL/
+                    <div class="arrow">↗</div>
+                </a>
+                <a href="pizza.html" class="project" data-project="Lumière Pizzeria" data-image="images/main-pizza.jpg">
+                    <span class="project-number">RP / 04</span>
+                    LUMIERE PIZZERIA/
+                    <div class="arrow">↗</div>
+                </a>
+                <a href="Hiraeth.html" class="project" data-project="Hiraeth" data-image="images/main-hiraeth.jpg">
+                    <span class="project-number">RP / 05</span>
+                    HIRAETH/
+                    <div class="arrow">↗</div>
+                </a>
+                <a href="sticker.html" class="project" data-project="GRAPHIC STICKER" data-image="images/main-sticker.jpg">
+                    <span class="project-number">RP / 06</span>
+                    GRAPHIC STICKER/
+                    <div class="arrow">↗</div>
+                </a>
+                <a href="191970.html" class="project" data-project="191970" data-image="images/main-191970.jpg">
+                    <span class="project-number">RP / 07</span>
+                    191970/
+                    <div class="arrow">↗</div>
+                </a>
+                <a href="choco.html" class="project" data-project="choco euros" data-image="images/main-choco.jpg">
+                    <span class="project-number">RP / 08</span>
+                    CHOCO EUROS/
+                    <div class="arrow">↗</div>
+                </a>
+                <a href="converse.html" class="project" data-project="global 70’" data-image="images/main-converse.jpg">
+                    <span class="project-number">RP / 09</span>
+                    GLOBAL 70’/
+                    <div class="arrow">↗</div>
+                </a>
+                <a href="more.html" class="project" data-project="wecare" data-image="images/main-uts.jpg">
+                    <span class="project-number">RP / 10</span>
+                    MORE/
+                    <div class="arrow">↗</div>
+                </a>
+            </div>
+            <div class="contact">
+                
+                <button class="button" id="emailButton">EMAIL</button>
+                <a href="https://www.instagram.com/uts.jpg/" target="_blank" class="button">INSTAGRAM</a>
+                <a href="https://www.linkedin.com/in/aviuts/" class="button highlight" target="_blank">LINKEDIN</a>
+            </div>
+        </main>
+        <div id="project-image" class="project-image"></div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const projects = document.querySelectorAll('.project');
+            const projectImage = document.getElementById('project-image');
+            const body = document.body;
+            const emailButton = document.getElementById('emailButton');
+            let emailTimeout;
+
+            // Email copy functionality
+            emailButton.addEventListener('click', async () => {
+                const email = 'utsavi3010@gmail.com';
+                
+                try {
+                    await navigator.clipboard.writeText(email);
+                    emailButton.textContent = 'COPIED';
+                    emailButton.classList.add('copied');
+                    
+                    // Clear any existing timeout
+                    if (emailTimeout) {
+                        clearTimeout(emailTimeout);
+                    }
+                    
+                    // Reset button text and style after 3 seconds
+                    emailTimeout = setTimeout(() => {
+                        emailButton.textContent = 'EMAIL';
+                        emailButton.classList.remove('copied');
+                    }, 2000);
+                } catch (err) {
+                    console.error('Failed to copy email:', err);
+                }
+            });
+
+            // Array of vibrant colors for random background
+
+            const colors = [
+    '#FAD0DC', // Light Pink
+    '#FFF9C4', // Light Yellow
+    '#FFECB3', // Light Orange
+    '#C8E6C9', // Light Green
+    '#D3E6FF', // Light Blue
+    '#F0E1FF', // Light Purple
+];
+
+
+
+            projects.forEach(project => {
+                project.addEventListener('mouseenter', () => {
+                    const projectName = project.getAttribute('data-project');
+                    const projectImageUrl = project.getAttribute('data-image');
+                    
+                    // Set random background color
+                    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                    body.style.backgroundColor = randomColor;
+                    
+                    // Show project image
+                    projectImage.style.backgroundImage = `url('${projectImageUrl}')`;
+                    projectImage.style.opacity = '1';
+                    
+                    // Add hover class to body
+                    body.classList.add('project-hovered');
+                });
+
+                project.addEventListener('mouseleave', () => {
+                    // Reset background color
+                    body.style.backgroundColor = '#F5F3E3';
+                    
+                    // Hide project image
+                    projectImage.style.opacity = '0';
+                    
+                    // Remove hover class from body
+                    body.classList.remove('project-hovered');
+                });
+            });
+
+            // Update local time every minute
+            function updateTime() {
+                const timeElement = document.querySelector('.time');
+                const now = new Date();
+                const hours = now.getHours();
+                const minutes = now.getMinutes();
+                const ampm = hours >= 12 ? 'PM' : 'AM';
+                const formattedHours = hours % 12 || 12;
+                const formattedMinutes = minutes.toString().padStart(2, '0');
+                timeElement.textContent = `LOCAL TIME ${formattedHours}:${formattedMinutes} ${ampm}`;
+            }
+
+            updateTime();
+            setInterval(updateTime, 60000);
+        });
+    </script>
+</body>
+</html>
